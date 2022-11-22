@@ -192,7 +192,7 @@ def tip():
             conn = http.client.HTTPSConnection('api.tianapi.com')  #接口域名
             params = urllib.parse.urlencode({'key':tianxing_API,'city':city})
             headers = {'Content-type':'application/x-www-form-urlencoded'}
-            conn.request('POST','/tianqi/index',params,headers)
+            conn.request('GET','/tianqi/index',params,headers)
             res = conn.getresponse()
             data = res.read()
             data = json.loads(data)
